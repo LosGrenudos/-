@@ -1,0 +1,136 @@
+/* Animacion de la imagen */
+@keyframes show {
+    from {
+        scale: 100%;
+    }
+
+    to {
+        scale: 60%
+    }
+ }
+ /*Aqui va la imagen de logo*/
+.Pizzeria img {
+    view-timeline-name: --image;
+    view-timeline-axis: block;
+
+    animation-timeline: --image;
+    animation-name: show;
+}
+ /*Imagen de fondo y letra de la pagina*/
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Renogare';
+    background-image: url("pizza.jpg");
+    background-size: 300px;
+    background-repeat: repeat;
+}
+/* Cabecera */
+header {
+    width: 100%;
+    height: 20px;
+    top: 0;
+}
+/* navegacion */
+.nav {
+    position: fixed;
+    width: 100%;
+    background: #ad6738;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    transition: all 0.5s ease;
+}
+.nav.active{
+    background: #ffecdf;
+    padding: 10px;
+    z-index: 9999;
+}
+.nav.active .logo,
+.nav.active .menu a{
+    color: #000000;
+}
+.nav.active a:hover {
+    background: black;
+    color: #ffecdf;
+}
+/* logo */
+.logo {
+    font-size: 25px;
+    color: black;
+    font-weight: 100;
+}
+.menu {
+ display: flex;
+}
+.menu li{
+    list-style: none;
+    margin: 10px;
+}
+.menu li a{
+    color: #ffecdf;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.4s ease;
+}
+.menu li a:hover{
+    padding: 5px 10px;
+    background: #c27036;
+    color: black;
+    border-radius: 15px;
+}
+.item {
+    scroll-margin-top: 11ex;
+    margin: 0 auto;
+    align-content: center;
+    width: 75%;
+    height: auto;
+    background: #ad6738;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+section{
+    display: flex;
+    width: 60%;
+    height: 60%;
+    margin: 0 auto;
+  }
+  section img{
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .7;
+    transition: .5s ease;
+  }
+  section img:hover{
+    cursor: grab;
+    width: 300px;
+    opacity: 1;
+    filter: contrast(100%);
+  }
+  .buttons {
+    min-width: 50%;
+    display: flex;
+    height: 10%;
+    justify-content: space-between;
+  }
+  .buttons a {
+    text-decoration: none;
+    font-size: 28px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    background: #314652;
+    color: #f1f1f1;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+    transition: all .4s ease-in-out;
+    margin: 10px;
+  }
+  .buttons a:hover {
+    transform: scale(1.1) rotate(360deg);
+  }
